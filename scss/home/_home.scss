@@ -1,0 +1,164 @@
+
+.container-1{
+  @include flex(grid, center, center);
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 1fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.add-cart{
+  @include flex(flex, center, center);
+  position: relative;
+  bottom: 95px;
+  left: 125px;
+  transform: translate(-50%, -50%);
+  gap: 10px;
+  background-color:hsl(20, 50%, 98%);
+  border:  solid 1px hsl(14, 25%, 72%);
+  border-radius: 30px;
+  height: 45px;
+  width: 160px;
+
+}
+
+.cart-no{
+  position: relative;
+  right: 30px;
+  transform: translate(-50%);
+  color: $Rose-50;
+  text-align: center;
+}
+
+.box-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color:hsl(20, 50%, 98%);
+  border-radius: 15px;
+  padding: 20px;
+
+  & h1{
+    font-size: 2.5rem;
+    position: relative;
+    transform: translate(-50%);
+    right: 18px;
+    color: $Red;
+  }
+}
+
+.empty-cart{
+  height: 120px;
+  width: 120px;
+}
+
+
+.decrement-quantity{
+  visibility: hidden;
+  background-color: $Red;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.increment-quantity{
+  visibility: hidden;
+  background: $Rose-50;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.decrement.active{
+  @include flex(flex, center, center);
+  border-radius: 50%;
+  border: 1px solid $Rose-50;
+  background-color: $Red;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.increment.active{
+  @include flex(flex, center, center);
+  border-radius: 50%;
+  border: 1px solid $Rose-50;
+  background-color: $Rose-50;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.add-cart:hover{
+  cursor: pointer;
+  border: 1px solid $Red;
+  transition: border 0.3s;
+}
+
+.add-cart.active{
+  background-color: $Red;
+  transition: border 0.3s;
+}
+
+.cart:hover{
+  color: 1px solid $Red;
+  transition: color 0.3s;
+}
+
+.image{
+  border-radius: 10px;
+  height: 220px;
+  width: 250px;
+  margin-bottom: 30px;
+}
+
+.image .selected{
+  border: 1.8px solid $Red;
+}
+
+.cart-image{
+  height: 20px;
+  width: 20px;
+}
+
+
+$mobile-padding: 0 1rem;
+
+
+/* Mobile-Only 1 */
+@include mobile-only-1 {
+  .container, .container-1 {
+    @include grid(grid, center, center);
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 768px;
+    margin: 30px auto 0; 
+    margin-bottom: 20px;
+    gap: 20px;
+    padding: $mobile-padding;
+  }
+
+  .box-1 h1{
+    font-size: 2.0rem;
+    transform: translate(-50%);
+    left: 15px;
+  }
+}
+
+/* Mobile-Only 2 */
+@include mobile-only-2 {
+  .container, .container-1 {
+    @include grid(grid, center, center);
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 399px;
+    margin: 30px auto 0;
+    margin-bottom: 20px;
+    gap: 25px;
+    padding: $mobile-padding;  
+  }
+}
